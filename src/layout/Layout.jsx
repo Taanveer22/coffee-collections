@@ -6,7 +6,9 @@ const Layout = () => {
   return (
     <div className="w-11/12 mx-auto">
       <Navbar></Navbar>
-      <Outlet></Outlet>
+      <div className="min-h-[calc(100vh-242px)] my-12">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );
