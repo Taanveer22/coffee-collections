@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="navbar bg-gray-200 shadow-sm sticky top-0 z-50">
+    <div className="navbar shadow-sm fixed z-50 backdrop-blur-xl bg-white/30">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,9 +24,30 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/coffeeList">Cofee List</NavLink>
-            <NavLink to="/dashBoard">Dashboard</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-600"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/coffeeList"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-600"
+              }
+            >
+              Cofee List
+            </NavLink>
+            <NavLink
+              to="/dashBoard"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-600"
+              }
+            >
+              Dashboard
+            </NavLink>
           </ul>
         </div>
         <h1 className="text-3xl font-bold text-green-500">
@@ -35,9 +56,30 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-6 text-lg font-medium">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/coffeeList">Coffeelist</NavLink>
-          <NavLink to="/dashBoard">Dashboard</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-green-600" : "text-gray-600"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/coffeeList"
+            className={({ isActive }) =>
+              isActive ? "text-green-600" : "text-gray-600"
+            }
+          >
+            Coffeelist
+          </NavLink>
+          <NavLink
+            to="/dashBoard"
+            className={({ isActive }) =>
+              isActive ? "text-green-600" : "text-gray-600"
+            }
+          >
+            Dashboard
+          </NavLink>
         </ul>
       </div>
     </div>
