@@ -9,8 +9,8 @@ const Categories = ({ categoryLoaderData }) => {
       <div role="tablist" className="mt-12 tabs tabs-border">
         {categoryLoaderData.map((categoryElement) => {
           // Debug: Check what category actually is
-          console.log("Category value:", categoryElement.category);
-          console.log("Category type:", typeof categoryElement.category);
+          // console.log("Category value:", categoryElement.category);
+          // console.log("Category type:", typeof categoryElement.category);
 
           return (
             <Link
