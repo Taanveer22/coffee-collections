@@ -29,12 +29,21 @@ const AllCards = () => {
         ))}
       </div>
 
-      <button
-        onClick={() => navigate("/coffeeList")}
-        className="btn btn-warning"
-      >
-        View All
-      </button>
+      <div className="flex items-center gap-6">
+        <button
+          onClick={() => navigate("/coffeeList")}
+          className="btn btn-warning"
+        >
+          View All In CoffeeList Page
+        </button>
+
+        <button
+          onClick={() => setCoffees(coffeesData)}
+          className="btn btn-warning"
+        >
+          View All In This Page
+        </button>
+      </div>
     </div>
   );
 };
