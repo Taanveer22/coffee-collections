@@ -3,9 +3,9 @@ import Layout from "../Layout";
 import Home from "../pages/Home";
 import CoffeeList from "../pages/CoffeeList";
 import Dashboard from "../pages/Dashboard";
-import Categories from "../components/Categories";
+import Cards from "../components/Cards";
 
-const router = createBrowserRouter([
+const MyRouter = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
@@ -13,11 +13,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("./categories.json"),
+        loader: () => fetch("/categories.json"),
         children: [
           {
-            path: "/category",
-            element: <Categories></Categories>,
+            path: "/categoryType/:category",
+            element: <Cards></Cards>,
           },
         ],
       },
@@ -33,4 +33,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export default MyRouter;
