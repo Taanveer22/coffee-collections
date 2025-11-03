@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Card from "./Card";
 import { useEffect, useState } from "react";
 
@@ -19,13 +19,22 @@ const AllCards = () => {
     }
   }, [coffeesData, category]);
   // console.log(coffees);
+
+  const navigate = useNavigate();
   return (
-    <div>
+    <div className="space-y-5">
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6">
         {coffees.map((coffeeItem) => (
           <Card key={coffeeItem.id} coffeeItem={coffeeItem}></Card>
         ))}
       </div>
+
+      <button
+        onClick={() => navigate("/coffeeList")}
+        className="btn btn-warning"
+      >
+        View All
+      </button>
     </div>
   );
 };
