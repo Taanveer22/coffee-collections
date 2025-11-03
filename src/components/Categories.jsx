@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Categories = ({ categoryLoaderData }) => {
   // console.log(categoryLoaderData);
@@ -13,14 +13,18 @@ const Categories = ({ categoryLoaderData }) => {
           // console.log("Category type:", typeof categoryElement.category);
 
           return (
-            <Link
+            <NavLink
               to={`/categoryType/${categoryElement.category}`}
               key={categoryElement.id}
               role="tab"
-              className="tab text-xl font-bold"
+              className={({ isActive }) =>
+                isActive
+                  ? "tab tab-active text-lg font-medium"
+                  : "tab text-lg font-medium"
+              }
             >
               {categoryElement.category}
-            </Link>
+            </NavLink>
           );
         })}
       </div>
