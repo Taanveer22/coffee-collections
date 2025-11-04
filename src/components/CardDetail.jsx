@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { setToLocalStorage } from "../utilities";
 
 const CardDetail = () => {
   const [oneCoffee, setOneCoffee] = useState({});
@@ -21,6 +22,10 @@ const CardDetail = () => {
 
   const { name, image, making_process } = oneCoffee || {};
 
+  const handleAddToFavourite = (oneCoffee) => {
+    setToLocalStorage(oneCoffee);
+  };
+
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
@@ -29,7 +34,12 @@ const CardDetail = () => {
           <div>
             <h1 className="text-5xl font-bold">{name}</h1>
             <p className="py-6">{making_process}</p>
-            <button className="btn btn-success">Add To Favourite</button>
+            <button
+              onClick={() => handleAddToFavourite(oneCoffee)}
+              className="btn btn-success"
+            >
+              Add To Favourite
+            </button>
           </div>
         </div>
       </div>
