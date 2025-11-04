@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 // get from ls
 const getFromLocalStorage = () => {
   let coffeesList = [];
@@ -15,11 +17,11 @@ const setToLocalStorage = (oneCoffee) => {
     (coffeeItem) => coffeeItem.id === oneCoffee.id
   );
   if (isExist) {
-    alert("already exist");
+    toast.error("already exist");
   } else {
     coffeesList.push(oneCoffee);
     localStorage.setItem("coffeesList", JSON.stringify(coffeesList));
-    alert("successfully added");
+    toast.success("successfully added");
   }
 };
 // delete from ls
@@ -30,7 +32,7 @@ const deleteFromLocalStorage = (id) => {
   );
   if (remainingList) {
     localStorage.setItem("coffeesList", JSON.stringify(remainingList));
-    alert("deleted from dashboard");
+    toast.success("deleted from dashboard");
   }
 };
 // export functions all

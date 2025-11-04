@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { deleteFromLocalStorage, getFromLocalStorage } from "../utilities";
 import Card from "../components/Card";
+import Heading from "../components/Heading";
 
 const Dashboard = () => {
   const [coffees, setCoffees] = useState([]);
@@ -16,7 +17,11 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <Heading
+        title="Welcome to Dashboard"
+        subTitle="Manage coffees that you have previously added as favorite. You can view or remove them from here."
+      ></Heading>
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12">
         {coffees.map((coffeeItem) => (
           <Card
             key={coffeeItem.id}

@@ -6,9 +6,11 @@ import "./index.css";
 // react router import
 import { RouterProvider } from "react-router-dom";
 import MyRouter from "./routes/MyRouter";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={MyRouter}></RouterProvider>
+    <Toaster></Toaster>
   </StrictMode>
 );
