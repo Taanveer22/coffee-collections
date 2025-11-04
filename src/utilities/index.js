@@ -23,5 +23,15 @@ const setToLocalStorage = (oneCoffee) => {
   }
 };
 // delete from ls
+const deleteFromLocalStorage = (id) => {
+  let coffeesList = getFromLocalStorage();
+  const remainingList = coffeesList.filter(
+    (coffeeItem) => coffeeItem.id !== id
+  );
+  if (remainingList) {
+    localStorage.setItem("coffeesList", JSON.stringify(remainingList));
+    alert("deleted from dashboard");
+  }
+};
 // export functions all
-export { getFromLocalStorage,setToLocalStorage };
+export { getFromLocalStorage, setToLocalStorage, deleteFromLocalStorage };
